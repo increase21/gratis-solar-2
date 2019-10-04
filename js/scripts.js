@@ -101,6 +101,7 @@
       }
 
       $('.free_quote_area').html(thankU)
+      $('html,body').animate({ scrollTop: $('#thank_you_for').offset().top - 100 }, 400)
    })
 
 
@@ -194,7 +195,7 @@
 </div>`
 
 
-   const thankU = `<div style="line-height:2;" class="text-center p-3"><h1 class="custom-font">Thank You</h1>
+   const thankU = `<div style="line-height:2;" class="text-center p-3" id="thank_you_for"><h1 class="custom-font">Thank You</h1>
    <p style="font-size:18px">For using Solarebate.com</p>
    <p style="font-size:18px">You will be contacted shortly with great money-saving offers.</div>`
 
