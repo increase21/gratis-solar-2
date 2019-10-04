@@ -166,10 +166,10 @@
 <p class="text-center error neon-red mt-1" style="font-size: 15px">
 </p>
 <div class="">
-<label for="first_name">First Name <span class="neon-red">*stree only</span></label>
+<label for="first_name">First Name</label>
 <input type="text" class="form-control" id="first_name" placeholder="First Name">
 
-<label for="last_name">Last Name<span class="neon-red">*must be correct</span></label>
+<label for="last_name">Last Name</label>
 <input type="text" class="form-control" id="last_name" placeholder="Last Name">
 
 <label for="phone">Phone: (10-Digits)</label>
@@ -187,7 +187,7 @@
 <div class="mt-1">
 <label>
    <input type="checkbox" id="fr_checkbox" />
-   <span style="font-size:12px"> By clicking the submit button, you agree to our <a href="" target="_blank">Privacy Policy</a> and authorize SolarEbate.com and its network of <a href="" target="_blank"> service providers</a> to contact you at the telephone or mobile number you entered.</span>
+   <span style="font-size:12px"> By clicking the submit button, you agree to our <a href="http://www.solarebate.com/privacy.php" target="_blank">Privacy Policy</a> and authorize SolarEbate.com and its network of <a href="http://www.intelligentmediagroup.net/partners.asp#improvement" target="_blank"> service providers</a> to contact you at the telephone or mobile number you entered.</span>
 </label>
 </div>
 <button type="button" class="btn form-control bg-red white-color mt-1" type="submit" style="width: 100%" id="submit_btn3">GET A QUOTE TODAY!</button></div>
