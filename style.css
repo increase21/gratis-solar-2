@@ -1245,6 +1245,9 @@ footer a {
 .carol-notice h1 {
    font-family: 'Oswald', sans-serif !important;
    text-shadow: 6px 6px 16px #000;
+   height: initial !important;
+   font-size: 70px;
+   line-height: 80px
 }
 
 .custom-font {
