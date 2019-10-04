@@ -194,7 +194,7 @@
 </div>`
 
 
-   const thankU = `<div style="line-height:2 text-center p-3"><h1 class="custom-font">Thank You</h1>
+   const thankU = `<div style="line-height:2;" class="text-center p-3"><h1 class="custom-font">Thank You</h1>
    <p style="font-size:18px">For using Solarebate.com</p>
    <p style="font-size:18px">You will be contacted shortly with great money-saving offers.</div>`
 
