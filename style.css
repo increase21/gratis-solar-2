@@ -530,6 +530,9 @@ h6 {
    background-color: #fff;
 }
 
+.bg-blue {
+   background: rgb(42, 45, 81)
+}
 
 
 /* Test Align */
@@ -561,7 +564,7 @@ h6 {
    height: 70px;
    -webkit-transition: 2.3s ease-in-out;
    transition: 2.3s ease-in-out;
-   background: #222;
+   background: rgb(42, 45, 81);
    z-index: 999;
    display: block !important;
    position: fixed;
@@ -1352,12 +1355,39 @@ footer a {
       z-index: 11;
       margin: auto
    }
+
+   .footer-img {
+      width: 200px !important;
+      display: inline-block !important;
+      margin: 1rem auto;
+   }
+
+   .carol-notice {
+      max-width: 500px;
+   }
+
+   .carol-notice h1 {
+      font-size: 55px
+   }
+
 }
 
 @media(max-width:576px) {
    .free_quote_area {
       max-width: auto;
       padding: 1rem;
+   }
+
+   .carol-notice {
+      max-width: initial;
+   }
+
+   .carol-notice h1 {
+      font-size: 30px
+   }
+
+   .footer-img {
+      width: 150px !important;
    }
 
    .card-box {
