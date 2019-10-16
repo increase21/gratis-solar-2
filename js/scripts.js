@@ -1,8 +1,6 @@
 (function ($) {
    'use strict';
 
-
-
    // Sticky Active Code ===================================================================
 
    $(window).scroll(function () {
@@ -21,7 +19,7 @@
    const displayError = (message) => {
       $('.error').text(message)
    }
-
+   // validating for one
    $('#submit_btn1').on('click', (e) => {
       e.preventDefault();
       var addr = $('#addr').val()
@@ -34,19 +32,70 @@
       }
 
       if (zCode === '') {
-         return displayError('Address is required')
+         return displayError('Zip code is required')
       }
 
       if (email === '') {
-         return displayError('Address is required')
+         return displayError('Email is required')
+      }
+
+      if (!email.includes('@') || !email.includes('.')) {
+         return displayError('Invalid email')
       }
 
       if (home_type === '') {
          return displayError('Home type not selected')
       }
-      $('.qt_form').html(form2)
+      $('.error').text('')
+      $('#fieldset_one').addClass('d-none')
+      $('#fieldset_two').removeClass('d-none')
    })
 
+   // do zip lookup
+   $('#zcode').on('change', () => {
+      var zipcode = $('#zcode').val();
+
+      $.ajax({
+         type: "GET",
+         url: 'https://api.zippopotam.us/us/' + zipcode,
+         dataType: 'json',
+         beforeSend: function () {
+            $('#z-validate').text('Validation zip...')
+         }
+      })
+         .done(function (data) {
+
+            $('#z-validate').text('*Correct');
+            $('#submit_btn1').prop('disabled', false)
+            //console.log( "second success" );
+            var geodata = data['places'];
+            // var city = geodata[0]['place name'];
+            var state = geodata[0]['state abbreviation'];
+            // $('#city').val(city);
+            // $('#state').val(state);
+
+            // get the locat providers
+            var $select = $('#power_com');
+            $.getJSON('https://api.imgleads.com/data/9-current_provider.ashx?stateAbb=' + state, function (data) {
+               $select.html('');
+               $select.append('<option value="">Select Power Company</option>');
+               $.each(data.currentProvider, function (key, val) {
+                  $select.append('<option value="' + val.name + '">' + val.name + '</option>');
+               });
+            });
+
+         })
+         .fail(function (jqXHr, textStatus, errorThrown) {
+            //console.log( "error" );
+            $('#z-validate').text('Invalid Zip Code');
+            $('#submit_btn1').prop('disabled', true)
+         })
+         .always(function () {
+            //console.log( "complete" );
+         });
+   })
+
+   // validating form two
    $('body').on('click', '#submit_btn2', (e) => {
       e.preventDefault();
       var propType = $('#prop_type').val()
@@ -65,12 +114,32 @@
       if (eBill === '') {
          return displayError('Electric Bill not selected')
       }
-      $('.qt_form').html(form3)
+      if (PowerCom === '') {
+         return displayError('Power company not selected')
+      }
+      $('#fieldset_two').addClass('d-none')
+      $('#fieldset_three').removeClass('d-none')
+   })
+
+   $('#phone').on('keyup', (e) => {
+      var num = e.target.value
+      if (num !== '' && e.keyCode !== 8) {
+         var corretnum = num.match(/\d/g).join('')
+         if (corretnum.length > 5) {
+            var number = `(${corretnum.substr(0, 3)})-${corretnum.substr(3, 3)}-${corretnum.substr(6)}`
+         } else if (corretnum.length >= 3) {
+            var number = `(${corretnum.substr(0, 3)})-${corretnum.substr(3, 3)}`
+         } else {
+            var number = corretnum
+         }
+         e.target.value = number
+      }
    })
 
    // when the free quote btn is clicked
    $('.gfree_btn').on('click', () => {
-      $('html,body').animate({ scrollTop: $('.free_quote_area').offset().top - 100 }, 400)
+      fbq('track', 'ViewContent');
+      $('html,body').animate({ scrollTop: $('.free_quote_area').offset().top - 100 }, 400);
    })
    // when the final btn is clicked display the thank you page
    $('body').on('click', '#submit_btn3', () => {
@@ -78,8 +147,7 @@
       var lastName = $('#last_name').val()
       var phone = $('#phone').val()
       var creditScore = $('#credit_score').val()
-      var checkbox = $('#fr_checkbox').prop('checked')
-
+      var checkbox = $('#leadid_tcpa_disclosure').prop('checked')
 
       if (firstName === '') {
          return displayError('First Name is required')
@@ -99,110 +167,17 @@
       if (!checkbox) {
          return displayError('You have to accept the terms and conditions')
       }
-
-      $('.free_quote_area').html(thankU)
-      $('html,body').animate({ scrollTop: $('#thank_you_for').offset().top - 100 }, 400)
+      DoSignup()
    })
 
-
-   const form2 = ` <div class="show_process d-flex">
-<div><span>1</span></div>
-<hr>
-<div class="active"><span>2</span></div>
-<hr>
-<div><span>3</span></div>
-</div>
-<p class="text-center error neon-red mt-1" style="font-size: 15px">
-</p>
-<div class="">
-<label for="prop_type">Property Type</label>
-<select class="form-control" name="home_type" id="prop_type">
-   <option value="">Property Type?</option>
-   <option>Single Famile</option>
-   <option>Multiple Family</option>
-   <option>Townhome</option>
-   <option>Condominium</option>
-   <option>Duplex</option>
-   <option>Mobile Home</option>
-   <option>Others</option>
-</select>
-<label for="roof_shade">How Much Sun On Your Roof</label>
-<select class="form-control" name="home_type" id="roof_shade">
-   <option value="">Does Your Roof Get Sun?</option>
-   <option>No Shade</option>
-   <option>A Little Shade</option>
-   <option>A Lot of Shade</option>
-   <option>Uncertain</option>
-</select>
-<label for="e_bill">Average Monthly Electric Bill</label>
-<select class="form-control" name="home_type" id="e_bill">
-   <option value="">Your Average Electric Bill</option>
-   <option>$0-50</option>
-   <option>$51-100</option>
-   <option>$101-150</option>
-   <option>$151-200</option>
-   <option>$201-300</option>
-   <option>$301-400</option>
-   <option>$401-500</option>
-   <option>$501-600</option>
-   <option>$601-700</option>
-   <option>$701-800</option>
-   <option>$801+</option>
-</select>
-<label for="power_com">Current Utility Provider</label>
-<select class="form-control" name="home_type" id="power_com">
-   <option>Others</option>
-</select>
-<button type="button" class="btn form-control bg-red white-color mt-1" type="submit" style="width: 100%" id="submit_btn2">NEXT </button></div>
-</div>`
-
-
-   const form3 = ` <div class="show_process d-flex">
-<div><span>1</span></div>
-<hr>
-<div><span>2</span></div>
-<hr>
-<div class="active"><span>3</span></div>
-</div>
-<p class="text-center error neon-red mt-1" style="font-size: 15px">
-</p>
-<div class="">
-<label for="first_name">First Name</label>
-<input type="text" class="form-control" id="first_name" placeholder="First Name">
-
-<label for="last_name">Last Name</label>
-<input type="text" class="form-control" id="last_name" placeholder="Last Name">
-
-<label for="phone">Phone: (10-Digits)</label>
-<input type="tel" maxLength="10" minLength="10" class="form-control" id="phone" placeholder="Phone">
-
-<label for="credit_score">What is your Credit Score</label>
-<select class="form-control" name="home_type" id="credit_score">
-   <option value="">Estimate Your Credit Score</option>
-   <option>Excellent</option>
-   <option>Good</option>
-   <option>Fair</option>
-   <option>Poor</option>
-</select>
-
-<div class="mt-1">
-<label>
-   <input type="checkbox" id="fr_checkbox" />
-   <span style="font-size:12px"> By clicking the submit button, you agree to our <a href="http://www.solarebate.com/privacy.php" target="_blank">Privacy Policy</a> and authorize SolarEbate.com and its network of <a href="http://www.intelligentmediagroup.net/partners.asp#improvement" target="_blank"> service providers</a> to contact you at the telephone or mobile number you entered.</span>
-</label>
-</div>
-<button type="button" class="btn form-control bg-red white-color mt-1" type="submit" style="width: 100%" id="submit_btn3">GET A QUOTE TODAY!</button></div>
-</div>`
-
+   // close the modal once the close btn is clicked
+   $('body').on('click', '.refresh-btn', function () {
+      location.reload()
+   })
 
    const thankU = `<div style="line-height:2;" class="text-center p-3" id="thank_you_for"><h1 class="custom-font">Thank You</h1>
-   <p style="font-size:18px">For using Solarebate.com</p>
+   <p style="font-size:18px">For using Topsolaroffers.com</p>
    <p style="font-size:18px">You will be contacted shortly with great money-saving offers.</div>`
-
-
-   // regarding offers for solar products and services using automated telephone technology including auto-dialers, pre-recorded messages, and text messages, even if your telephone or mobile number is currently listed on any state, federal, or corporate "Do Not Call" list, and you are not required to give your consent as a condition of purchase. You will receive calls from up to 4 solar providers. Message and data rates may apply. You understand that this consent is not a condition of purchase and that you may revoke this consent at any time
-
-
 
 
    // Welcome Slider Active Code ===================================================================
@@ -330,15 +305,11 @@
       prependTo: '#mobile-menu '
    });
 
-
-
-
    //Timer  ========================================================================================
 
    $('.counter').counterUp({
       time: 2000
    });
-
 
    // Preloader active code  ==============================================================================
 
@@ -349,14 +320,10 @@
       });
    });
 
-
-
    // Active Menu Js  ==============================================================================
 
    var elm = document.querySelector('#header');
    var ms = new MenuSpy(elm);
-
-
 
    // WOW Js  ====================================================================================
    new WOW().init();
@@ -374,6 +341,60 @@
       callback: function (anchor, toggle) { } // Function to run after scrolling
    });
 
+   // FOr submitting sign-up forms
+   function DoSignup(form) {
+      // get the Leadid
+      let Leadid = $('#leadid_token').val()
+      // Live
+      var url = "https://gratisdigital.listflex.com/lmadmin/api/leadimport.php?";
+      // Test
+      //var url = "/_submit-test.php";
+      var formData = `apikey=F9AW57HCQW1R4JOM5&list_id=1576&cust_field_71=${Leadid}&`
+      // get all the form inputs
+      formData += $('#process_form').serialize();
+      // append the form input with the url
+      let callUrl = url + formData
+      // submit to the database
+      $.ajax({
+         type: "GET",
+         url: callUrl,
+         // dataType: 'json',
+         beforeSend: function () {
+            // Disable the button and Open the Modal dialog to show Processing....
+            $('#submit_btn3').attr('disabled', 'disabled');
+            $('.spinner').removeClass('d-none')
+         }
+      })
+         .done(function (data) {
+            if (data == 'Success') {
+               $('.free_quote_area').html(textSuccess)
+               fbq('track', 'CompleteRegistration');
+               $('html,body').animate({ scrollTop: $('#thank_you_for').offset().top - 100 }, 400)
+            }
+            else {
+               $('.free_quote_area').html(textFail)
+               $('html,body').animate({ scrollTop: $('#thank_you_for').offset().top - 100 }, 400)
+            }
+         })
+         .fail(function (jqXHr, textStatus, errorThrown) {
+            // show an error message
+            return displayError('We\'re sorry, an error occurred. Please try again in a few minutes.');
+         })
+      // .always(function () {
+      //    //console.log('Always');
+      //    $('#signupButton').removeAttr('disabled');
+      // });
+   }
 
+
+   const textSuccess = `<div id="thank_you_for" class="p-3">
+   <h3 class="text-green">THANK YOU FOR YOUR REQUEST</h3>
+<p class="mt-3"><strong>One of our agents will contact your shortly</strong></p>
+</div>`
+   const textFail = `<div id="thank_you_for" class="p-3">
+   <h2 class="text-red">Oops!</h2>
+<p class="mt-3"><strong>Something went wrong with your submission, try again</strong></p>
+<p><button class="btn mt-2 text-white bg-red refresh-btn">Try Again</button>
+</div>`
 
 })(jQuery);

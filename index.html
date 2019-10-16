@@ -7,13 +7,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!--Website Tile-->
-   <title>ITech Solar</title>
+   <title>Topsolaroffers</title>
 
    <!-- Favicon  -->
-   <link rel="shortcut icon" href="images/icon-red/fav.png">
-   <link rel="apple-touch-icon" href="images/icon-red/apple-touch-icon-57x57.png">
-   <link rel="apple-touch-icon" sizes="72x72" href="images/icon-red/apple-touch-icon-72x72.png">
-   <link rel="apple-touch-icon" sizes="114x114" href="images/icon-red/apple-touch-icon-114x114.png">
+   <!-- <link rel="shortcut icon" href="images/icon-red/fav.png"> -->
+   <link rel="shortcut icon" href="images/img/favico.ico" type="image/x-icon" />
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
    <!--All CSS Link-->
@@ -23,49 +21,66 @@
    <link rel="stylesheet" href="style.css">
    <!-- Responsive  -->
    <link rel="stylesheet" href="css/responsive.css">
+   <!-- DO NOT COPY THIS CODE-->
+   <!-- Pixel Code -->
+   <script>
+      !function (f, b, e, v, n, t, s) {
+         if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+         if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+         n.queue = []; t = b.createElement(e); t.async = !0;
+         t.src = v; s = b.getElementsByTagName(e)[0];
+         s.parentNode.insertBefore(t, s)
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '584088422131546');
+      fbq('track', 'PageView');
+   </script>
+   <noscript>
+      <img height="1" width="1" src="https://www.facebook.com/tr?id=584088422131546&ev=PageView&noscript=1" />
+   </noscript>
+   <!-- End Pixel Code -->
 </head>
 
 <body class="lit-bg">
 
    <!--======================Header Start======================-->
-   <header class="header-area-lit" id="header">
-      <div class="container-fluid">
-         <div class="row">
-            <div class="col-lg-3 col-8">
-               <!--====================== Logo & Company Name ======================-->
-               <a href="index-light.html#home" data-scroll>
-                  <!-- <img src="images/img/logo.png" alt=""> -->
-                  <!-- <h2>APPX</h2> -->
-               </a>
-            </div>
-            <div class="col-lg-9 col-4 text-right">
-               <!--Mobile Menu -->
-               <div id="mobile-menu" class="mobile-menu-lit"></div>
+   <!-- <header class="header-area-lit" id="header">
+      <div class="container-fluid full-h">
+         <div class="row full-h">
+            <div class="col-lg-3 col-8 align-self-center"> -->
+   <!--====================== Logo & Company Name ======================-->
+   <!-- <a href="index-light.html#home" data-scroll> -->
+   <!-- <h3 class="custom-font" style="font-size: 30px; color:rgb(238, 216, 14)">Topsolaroffers</h3> -->
+   <!-- <img src="images/img/logo.png" alt=""> -->
+   <!-- <h2>APPX</h2> -->
+   <!-- </a> -->
+   <!-- </div> -->
+   <!-- <div class="col-lg-9 col-4 text-right"> -->
+   <!--Mobile Menu -->
+   <!-- <div id="mobile-menu" class="mobile-menu-lit"></div> -->
 
 
-               <!--Main Menu -->
+   <!--Main Menu -->
 
-               <ul id="nav" class="nav-lit">
-                  <!-- <li><a href="index-light.html#about" data-scroll>Feature</a></li> -->
-                  <!-- <li><a href="index-light.html#download" data-scroll>Download</a></li> -->
-                  <!-- <li><a href="index-light.html#gallery" data-scroll>Gallery</a></li> -->
-                  <li><a href="../index.html" data-scroll>Home</a></li>
-                  <!-- <li><a href="#how-it" data-scroll>How it Works</a></li> -->
-                  <!-- <li><a href="index-light.html#contact-area" data-scroll>Contact Us</a></li> -->
-                  <li><a href="#price" data-scroll>Get Free Quote</a></li>
-               </ul>
-               <!--End Menu -->
-            </div>
-         </div>
+   <!-- <ul id="nav" class="nav-lit"> -->
+   <!-- <li><a href="index-light.html#about" data-scroll>Feature</a></li> -->
+   <!-- <li><a href="index-light.html#download" data-scroll>Download</a></li> -->
+   <!-- <li><a href="index-light.html#gallery" data-scroll>Gallery</a></li> -->
+   <!-- <li><a href="../index.html" data-scroll>Home</a></li> -->
+   <!-- <li><a href="#how-it" data-scroll>How it Works</a></li> -->
+   <!-- <li><a href="index-light.html#contact-area" data-scroll>Contact Us</a></li> -->
+   <!-- <li><a href="#price" data-scroll>Get Free Quote</a></li> -->
+   <!-- </ul> -->
+   <!--End Menu -->
+   <!-- </div> -->
+   <!-- </div>
       </div>
-   </header>
+   </header> -->
 
 
    <!--======================Welcome Page======================-->
    <section id="home">
       <!-- BG image and overlay -->
       <div class="welcome-img bg-img-lit prlx" style="background-image: url(images/img/background.jpg)">
-
          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -137,7 +152,7 @@
          </div>
       </div>
       <div class="free_quote_area mr-4">
-         <form name="free_gsheet_1" autocomplete="on">
+         <form name="free_gsheet_1" id="process_form" autocomplete="off">
             <div class="bg-drk">
                <h4 class="white-color p-3 text-center custom-font">
                   COMPLETE THE FORM TO GET FREE QUOTES AND
@@ -145,48 +160,160 @@
                </h4>
             </div>
             <div class="px-5 py-3 qt_form">
-               <div class="show_process d-flex">
-                  <div class="active"><span>1</span></div>
-                  <hr>
-                  <div><span>2</span></div>
-                  <hr>
-                  <div><span>3</span></div>
-               </div>
-               <p class="text-center error neon-red mt-1" style="font-size: 15px">
-               </p>
-               <div class="mt-4">
-                  <label for="addr">Home Street Address <span class="neon-red">*stree only</span></label>
-                  <input type="text" class="form-control" id="addr" placeholder="Home Stree Address">
+               <fieldset class="" id="fieldset_one">
+                  <div class="show_process d-flex">
+                     <div class="active"><span>1</span></div>
+                     <hr>
+                     <div><span>2</span></div>
+                     <hr>
+                     <div><span>3</span></div>
+                  </div>
+                  <p class="text-center error neon-red mt-1" style="font-size: 15px">
+                  </p>
+                  <div class="mt-4">
+                     <label for="addr">Home Street Address <span class="neon-red">*street only</span></label>
+                     <input type="text" class="form-control" name="address" id="addr" placeholder="Home Stree Address">
 
-                  <label for="zcode">Zip Code <span class="neon-red">*must be correct</span></label>
-                  <input type="number" maxLength="5" minLength="5" class="form-control" id="zcode"
-                     placeholder="Zip Code">
+                     <label for="zcode">Zip Code <span class="neon-red" id="z-validate">*must be correct</span></label>
+                     <input type="number" maxLength="5" minLength="5" class="form-control" id="zcode" name="zip"
+                        placeholder="Zip Code">
 
-                  <label for="addr">What's your Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Email">
-                  <label for="home_type">Homeowner?</label>
-                  <select class="form-control" name="home_type" id="home_type">
-                     <option value="">
-                        Are you a Homeowner?
-                     </option>
-                     <option>
-                        Yes
-                     </option>
-                     <option>
-                        No
-                     </option>
-                     <option>
-                        Commercial Property
-                     </option>
-                  </select>
-                  <button type="button" class="btn form-control bg-red white-color mt-1" type="submit"
-                     style="width: 100%" id="submit_btn1">
-                     NEXT
-                  </button>
-               </div>
-               <div class="spinner d-none">
-                  <div class="spin"></div>
-               </div>
+                     <label for="addr">What's your Email</label>
+                     <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                     <label for="home_type">Homeowner?</label>
+                     <select class="form-control" name="cust_field_65" id="home_type">
+                        <option value="">
+                           Are you a Homeowner?
+                        </option>
+                        <option>
+                           Yes
+                        </option>
+                        <option>
+                           No
+                        </option>
+                        <option>
+                           Commercial Property
+                        </option>
+                     </select>
+                     <input id="leadid_token" name="universal_leadid" type="hidden" value="" />
+                     <button type="button" class="btn form-control bg-red white-color mt-1" type="submit"
+                        style="width: 100%" id="submit_btn1">
+                        NEXT
+                     </button>
+                  </div>
+               </fieldset>
+               <!-- ==================== Form One ends ================= -->
+               <fieldset class="d-none" id="fieldset_two">
+                  <div class="show_process d-flex">
+                     <div><span>1</span></div>
+                     <hr>
+                     <div class="active"><span>2</span></div>
+                     <hr>
+                     <div><span>3</span></div>
+                  </div>
+                  <p class="text-center error neon-red mt-1" style="font-size: 15px">
+                  </p>
+                  <div class="">
+                     <label for="prop_type">Property Type</label>
+                     <select class="form-control" name="cust_field_66" id="prop_type">
+                        <option value="">Property Type?</option>
+                        <option>Single Famile</option>
+                        <option>Multiple Family</option>
+                        <option>Townhome</option>
+                        <option>Condominium</option>
+                        <option>Duplex</option>
+                        <option>Mobile Home</option>
+                        <option>Others</option>
+                     </select>
+                     <label for="roof_shade">How Much Sun On Your Roof</label>
+                     <select class="form-control" name="cust_field_67" id="roof_shade">
+                        <option value="">Does Your Roof Get Sun?</option>
+                        <option>No Shade</option>
+                        <option>A Little Shade</option>
+                        <option>A Lot of Shade</option>
+                        <option>Uncertain</option>
+                     </select>
+                     <label for="e_bill">Average Monthly Electric Bill</label>
+                     <select class="form-control" name="cust_field_68" id="e_bill">
+                        <option value="">Your Average Electric Bill</option>
+                        <option value="$0-50">$0-50</option>
+                        <option value="$51-100">$51-100</option>
+                        <option value="$101-150">$101-150</option>
+                        <option value="$151-200">$151-200</option>
+                        <option value="$201-300">$201-300</option>
+                        <option value="$301-400">$301-400</option>
+                        <option value="$401-500">$401-500</option>
+                        <option value="$501-600">$501-600</option>
+                        <option value="$601-700">$601-700</option>
+                        <option value="$701-800">$701-800</option>
+                        <option value="$801+">$801+</option>
+                     </select>
+                     <label for="power_com">Current Utility Provider</label>
+                     <select class="form-control" name="cust_field_69" id="power_com">
+                     </select>
+                     <button type="button" class="btn form-control bg-red white-color mt-1" type="submit"
+                        style="width: 100%" id="submit_btn2">NEXT </button></div>
+               </fieldset>
+               <!-- ========================Form Two ends=================================== -->
+               <fieldset class="d-none" id="fieldset_three">
+                  <div class="show_process d-flex">
+                     <div><span>1</span></div>
+                     <hr>
+                     <div><span>2</span></div>
+                     <hr>
+                     <div class="active"><span>3</span></div>
+                  </div>
+                  <p class="text-center error neon-red mt-1" style="font-size: 15px">
+                  </p>
+                  <div class="">
+                     <label for="first_name">First Name</label>
+                     <input type="text" class="form-control" name="fname" id="first_name" placeholder="First Name">
+
+                     <label for="last_name">Last Name</label>
+                     <input type="text" class="form-control" name="lname" id="last_name" placeholder="Last Name">
+
+                     <label for="phone">Phone: (10-Digits)</label>
+                     <input type="tel" maxLength="14" minLength="14" name="phone" class="form-control" id="phone"
+                        placeholder="Phone">
+
+                     <label for="country">Country</label>
+                     <select class="form-control" id="country" name="country" required>
+                        <option value="">Select your country</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="US">United State</option>
+                        <option value="Other">Others</option>
+                     </select>
+
+                     <label for="credit_score">What is your Credit Score</label>
+                     <select class="form-control" name="cust_field_70" id="credit_score" required>
+                        <option value="">Estimate Your Credit Score</option>
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Fair</option>
+                        <option>Poor</option>
+                     </select>
+                     <div class="mt-1">
+                        <label class="label_tcpa">
+                           <input type="checkbox" id="leadid_tcpa_disclosure" name="tcpa_disclosure" />
+                           <span style="font-size:12px; color: black;"> By clicking "Get A Quote Today", I agree to
+                              the <span class="link">Terms of Service</span>
+                              and <span class="link">Privacy Policy</span> and
+                              authorize up to <span class="link">4 solar energy
+                                 companies, their contractors and partners</span> to contact me
+                              with offers about solar product or service by telephone calls, artificial voice, and
+                              pre-recorded/text messages, using an automated telephone technology, to the number I
+                              provided above, even if my number is a mobile number or is currently listed on any
+                              state, federal or corporate Do Not Call list. I understand that my consent here is not
+                              a condition of purchase of any goods or services. Message and data rates may apply.</span>
+                        </label>
+                     </div>
+                     <button type="button" class="btn form-control bg-red white-color mt-1" type="submit"
+                        style="width: 100%" id="submit_btn3">GET A QUOTE TODAY!</button>
+                     <div class="spinner d-none">
+                        <div class="spin"></div>
+                     </div>
+                  </div>
+               </fieldset>
             </div>
          </form>
       </div>
@@ -233,63 +360,65 @@
       </div>
    </section>
 
-   <section class="bg-blue">
-      <div class="card-box py-7 container animatedParent" data-sequence="500">
-         <div class="_card animated fadeInLeftShort" data-id="1">
-            <div>
-               <img src="./images/img/q-img.jpg" />
+   <section class="bg-blue-off p-5 no-pad">
+      <div class="py-7 container animatedParent" data-sequence="500">
+         <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInLeftShort" data-id="1">
+               <div>
+                  <img src="./images/img/q-img.jpg" />
+               </div>
+               <div>
+                  <p class="">
+                     <h5 class="text-whitte">Residential Solar Energy Solutions</h5>
+                  </p>
+                  <p class="details">
+                     Powering your home with solar energy means saving money. It also means generating clean, renewable
+                     energy to meet your needs.
+                  </p>
+               </div>
             </div>
-            <div>
-               <p class="_card_title1">
-                  <h5 class="text-white">Residential Solar Energy Solutions</h5>
-               </p>
-               <p>
-                  Powering your home with solar energy means saving money. It also means generating clean, renewable
-                  energy to meet your needs.
-               </p>
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInUpShort" data-id="2">
+               <div>
+                  <img src="./images/img/industrial-solar.jpg" />
+               </div>
+               <div>
+                  <p class="">
+                     <h5 class="text-whitte">Industrial Solar Energy Solutions</h5>
+                  </p>
+                  <p class="details">
+                     We in conjunction with global partners help commercial users worldwide to show their commitment to
+                     eliminating carbon emissions and controlling their electricity bills.
+                  </p>
+               </div>
             </div>
-         </div>
-         <div class="_card animated fadeInUpShort" data-id="2">
-            <div>
-               <img src="./images/img/industrial-solar.jpg" />
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInDownShort" data-id="3">
+               <div>
+                  <img src="./images/img/small-small.jpg" />
+               </div>
+               <div>
+                  <p class="">
+                     <h5 class="text-whitte">Solar Energy Solutions for Small Utilities</h5>
+                  </p>
+                  <p class="details">
+                     We provide other solar applications like solar water heaters, solar water pumps, solar
+                     street-lights,
+                     solar garden lights etc.
+                  </p>
+               </div>
             </div>
-            <div>
-               <p class="_card_title1">
-                  <h5 class="text-white">Industrial Solar Energy Solutions</h5>
-               </p>
-               <p>
-                  We in conjunction with global partners help commercial users worldwide to show their commitment to
-                  eliminating carbon emissions and controlling their electricity bills.
-               </p>
-            </div>
-         </div>
-         <div class="_card animated fadeInDownShort" data-id="3">
-            <div>
-               <img src="./images/img/small-small.jpg" />
-            </div>
-            <div>
-               <p class="_card_title1">
-                  <h5 class="text-white">Solar Energy Solutions for Small Utilities</h5>
-               </p>
-               <p>
-                  We provide other solar applications like solar water heaters, solar water pumps, solar
-                  street-lights,
-                  solar garden lights etc.
-               </p>
-            </div>
-         </div>
-         <div class="_card animated fadeInRightShort" data-id="4">
-            <div>
-               <img src="./images/img/power-grid.jpg" />
-            </div>
-            <div>
-               <p class="_card_title1">
-                  <h5 class="text-white">Off Grid Solar PV System</h5>
-               </p>
-               <p>
-                  Reliable power supply anytime day or night even without grid access; Complete independence from
-                  external energy supply and electricity costs
-               </p>
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInRightShort" data-id="4">
+               <div>
+                  <img src="./images/img/power-grid.jpg" />
+               </div>
+               <div>
+                  <p class="">
+                     <h5 class="text-whitte">Off Grid Solar PV System</h5>
+                  </p>
+                  <p class="details">
+                     Reliable power supply anytime day or night even without grid access; Complete independence from
+                     external energy supply and electricity costs
+                  </p>
+               </div>
             </div>
          </div>
       </div>
@@ -297,56 +426,52 @@
 
    <section class="margin-top-50">
       <div class="container">
-         <h1 class=" clr-green wow fadeIn text-center"><span class="neon-red custom-font">GET STARTED</span></h1>
-         <div class="card-box py-2 animatedParent" data-sequence="500">
-            <div class="_card _card2 animated fadeInLeftShort" data-id="1">
+         <div class="row py-2 animatedParent" data-sequence="500">
+            <div class="col-12 mb-5">
+               <h1 class="clr-green wow fadeIn text-center">
+                  <span class="neon-red custom-font">GET STARTED</span>
+               </h1>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInLeftShort" data-id="1">
                <div>
-                  <img src="./images/get-stated/form-icon.png" />
+                  <img src="./images/get-stated/form-icon.png" alt="Free Quote Step One" class="step2-img" />
                </div>
                <div>
-                  <p class="_card_title1">
-                     <a href="#" class="font-weight-bold">Click the Get Free Quote Button</a>
-                  </p>
-                  <p>
+                  <h6 class="text-center">Click the Get Free Quote Button</h6>
+                  <p class="text-center">
                      Get started by clicking the free quote button below or scroll up to the header form
                   </p>
                </div>
             </div>
-            <div class="_card _card2 animated fadeInUpShort" data-id="2">
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInUpShort" data-id="2">
                <div>
-                  <img src="./images/get-stated/form-icon.png" />
+                  <img src="./images/get-stated/form-icon.png" alt="Free Quote Step Two" class="step2-img" />
                </div>
                <div>
-                  <p class="_card_title1">
-                     <a href="#" class="font-weight-bold">Fill The Free Quote Form</a>
-                  </p>
-                  <p>
+                  <h6 class="text-center">Fill The Free Quote Form</h6>
+                  <p class="text-center">
                      Feel free to fill the form and provide all the necessary information required
                   </p>
                </div>
             </div>
-            <div class="_card _card2 animated fadeInDownShort" data-id="3">
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInDownShort" data-id="3">
                <div>
-                  <img src="./images/get-stated/form-icon.png" />
+                  <img src="./images/get-stated/form-icon.png" alt="Free Quote Step Three" class="step2-img" />
                </div>
                <div>
-                  <p class="_card_title1">
-                     <a href="#" class="font-weight-bold">Provide Correct Details</a>
-                  </p>
-                  <p>
+                  <h6 class="text-center">Provide Correct Details</h6>
+                  <p class="text-center">
                      Providing correct details helps us provide you with excellent match
                   </p>
                </div>
             </div>
-            <div class="_card _card2 animated fadeInRightShort" data-id="4">
+            <div class="col-sm-6 col-md-6 col-lg-3 animated fadeInRightShort" data-id="4">
                <div>
-                  <img src="./images/get-stated/form-icon.png" />
+                  <img src="./images/get-stated/form-icon.png" alt="Free Quote Step Four" class="step2-img" />
                </div>
                <div>
-                  <p class="_card_title1">
-                     <a href="#" class="font-weight-bold">Click The Final Button &#38; Get Your Result</a>
-                  </p>
-                  <p>
+                  <h6 class="text-center">Click Get Quote Today</h6>
+                  <p class="text-center">
                      Finally, click the get free quote button on the final stage to get your free quote
                   </p>
                </div>
@@ -354,66 +479,15 @@
          </div>
       </div>
    </section>
-   <!-- 
-   <section class="margin-top-50 bg-drk py-5">
-      <div class="container">
-         <h1 class=" clr-green wow fadeIn text-center"><span class="neon-red custom-font">SOLAR REBATES
-               ADVANTAGES</span>
-         </h1>
-         <div class="card-box py-2 animatedParent" data-sequence="500">
-            <div class="_card animated fadeInLeftShort" data-id="1">
-               <div> -->
-   <!-- <img src="./images/get-stated/call.png" /> -->
-   <!-- </div>
-               <div>
-                  <p class="_card_title1">
-                     <a href="#" class="text-white lf">
-                        Limited-time Government Rebates Available Now!</a>
-                  </p>
-               </div>
-            </div>
-            <div class="_card animated fadeInUpShort" data-id="2">
-               <div> -->
-   <!-- <img src="./images/get-stated/bulb.jpg" /> -->
-   <!-- </div>
-               <div>
-                  <p class="_card_title1">
-                     <a href="#" class="text-white lf">You May Reduce Your Electrical Bill Dramatically!</a>
-                  </p>
-               </div>
-            </div>
-            <div class="_card animated fadeInDownShort" data-id="3">
-               <div> -->
-   <!-- <img src="./images/get-stated/thanku.jpg" /> -->
-   <!-- </div>
-               <div>
-                  <p class="_card_title1">
-                     <a href="#" class="text-white lf">
-                        Lease Panels for as little as $0 Down</a>
-                  </p>
-               </div>
-            </div>
-            <div class="_card animated fadeInRightShort" data-id="4">
-               <div> -->
-   <!-- <img src="./images/get-stated/installation.png" /> -->
-   <!-- </div>
-               <div>
-                  <p class="_card_title1">
-                     <a href="#" class="text-white lf">Claim a 30% Federal Tax Credit upon installation</a>
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section> -->
 
-   <section class="bg-blue py-3 mt-4">
+   <section class="bg-blue-off py-3 mt-4">
       <div class="container">
-         <h2 class="text-white custom-font">
-            FIND OUT WHICH REBATES ARE AVAILABLE
+         <h2 class="text-whitte custom-font">
+            SEE HOW YOU CAN SAVE WITH SOLAR ENERGY!
          </h2>
          <div>
-            <p class="text-white" style="font-size: 15px">We are always ready to bring you 24hrs power, Get the facts
+            <p class="text-whitte" style="font-size: 15px">We are always ready to help you cut down your cost, Get the
+               facts
                about solar for your property
             </p>
             <div class="text-center">
@@ -423,16 +497,33 @@
          <p style="clear: both"></p>
       </div>
    </section>
+   <!--===================== DO NOT COPY THIS CODE=============== -->
+   <script id="LeadiDscript" type="text/javascript">
+      // <!--
+      (function () {
+         var s = document.createElement('script');
+         s.id = 'LeadiDscript_campaign';
+         s.type = 'text/javascript';
+         s.async = true;
+         s.src = '//create.lidstatic.com/campaign/3ffc1e30-e738-636c-c5df-3540db7a21cc.js?snippet_version=2';
+         var LeadiDscript = document.getElementById('LeadiDscript');
+         LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
+      })();
+      // -->
+   </script>
+   <noscript><img
+         src='//create.leadid.com/noscript.gif?lac=90e796b0-f1ee-0403-f993-d685e0010cf9&lck=3ffc1e30-e738-636c-c5df-3540db7a21cc&snippet_version=2' /></noscript>
+   <!-- =====================Footer Area============================== -->
 
    <!--======================Footer Section======================-->
    <footer class="bg-blue">
       <div class="container">
-         <div class="row">
+         <div class="row rev-col">
             <div class="col-lg-2 text-center">
                <img src="./images/logo-solar.png" class="footer-img" style="width: 100%; margin-top: 10px">
             </div>
             <div class="col-lg-10 py-3">
-               <p style="font-size: 12px; line-height: 1.4; text-align: justify;">
+               <p class="text-whitte text-justify" style="font-size: 12px; line-height: 1.4;">
                   The operator of this website does not guarantee that energy savings will result as a use of its
                   service or
                   any service procured through this website. The operator of this website is not an installer or
@@ -463,7 +554,8 @@
                   not an independent
                   consumer protection update and the content provided hereon is for informational purposes only.
                   Please see the
-                  <a href="" class="privacy_policy">Privacy Policy</a> and <a href="" class="privacy_policy">Terms of
+                  <a href="/privacy.php" class="privacy_policy neon-red">Privacy Policy</a> and <a href="/terms.php"
+                     class="privacy_policy neon-red">Terms of
                      Use </a> for more
                   information. Consult
                   with your independent legal and financial advisor before acting on any information provided on this
@@ -484,8 +576,8 @@
          </div>
          <div class="row text-center">
             <div class="col-12">
-               <div class="ftr-red padding-30 white-color text-center">
-                  <p>Copyright &copy; Solar Energy - 2019. All Rights Reserved.
+               <div class="ftr-red padding-30 text-center">
+                  <p class="text-whitte">Copyright &copy; Topsolaroffers - 2019. All Rights Reserved.
                      <!-- <a href="https://themeforest.net/user/CreativeRacer">CreativeRacer.</a></p> -->
                </div>
             </div>
@@ -507,12 +599,12 @@
 
    <!-- google map dark style - If you don't want black style map. Remove this script link -->
 
-   <script src="js/map-style-lit.js"></script>
+   <!-- <script src="js/map-style-lit.js"></script> -->
 
    <!-- google map - insert_your_api -->
-   <script async defer
+   <!-- <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBksbuUixB8KCNG9ljZBsDV7d0u0PU2AEc&callback=initMap">
-      </script>
+      </script> -->
 </body>
 
 </html>

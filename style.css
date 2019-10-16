@@ -503,7 +503,7 @@ h6 {
 }
 
 .bg-red {
-   background-color: coral;
+   background-color: #e74c3c;
 }
 
 .bg-gray {
@@ -528,6 +528,10 @@ h6 {
 
 .bg-wht {
    background-color: #fff;
+}
+
+.bg-blue-off {
+   background: rgb(56, 61, 128)
 }
 
 .bg-blue {
@@ -1186,6 +1190,10 @@ footer a {
    background-image: linear-gradient(to right, #0009, transparent, transparent);
 }
 
+.full-h {
+   height: 100%;
+}
+
 .white-color {
    color: #fff
 }
@@ -1195,54 +1203,17 @@ footer a {
    text-align: left !important
 }
 
-.card-box {
-   display: flex;
-   justify-content: space-evenly;
-   margin-top: 5rem;
-   text-align: center;
-   padding: 20px 10px;
-}
-
 .bg-drk {
    background: #222;
 }
 
-._card {
-   display: flex;
-   flex-direction: column;
-   max-width: 300px;
-   margin-right: 1rem
-}
 
-._card-title {
-   font-weight: bold;
-   font-size: 18px
-}
-
-._card div img {
-   width: 230px;
-   height: 160px;
-}
-
-._card div:nth-child(2) {
-   padding: 2px 20px;
-   text-align: center;
-
-}
-
-._card2 {
-   box-shadow: 0px 2px 3px #eee
-}
-
-._card2 div img {
-   width: 110px;
+.step2-img {
+   width: 50px;
    height: initial;
-   margin-bottom: 2rem
-}
-
-._card2 div:first-child img,
-._card2 div:last-child img {
-   width: 60px;
+   margin: auto;
+   display: block;
+   margin-bottom: 2rem;
 }
 
 .carol-notice h1 {
@@ -1266,8 +1237,21 @@ footer a {
    font-weight: normal
 }
 
-.text-white {
+.text-whitte {
    color: #ccc !important
+}
+
+.text-green {
+   color: green;
+}
+
+.text-red {
+   color: #ff3500;
+}
+
+p.details {
+   color: #ccc !important;
+   font-size: 13px;
 }
 
 .free_quote_area {
@@ -1275,22 +1259,24 @@ footer a {
    top: 5px;
    right: 70px;
    z-index: 11;
-   max-width: 500px;
+   max-width: 440px;
    background: #eee;
-   padding-bottom: 2rem;
+   /* padding-bottom: 2rem; */
+   box-shadow: 0px 2px 3px #ccc;
 }
 
 .form-control {
-   height: 40px !important;
+   height: 37px !important;
    margin-bottom: 1rem;
    border: none !important;
    outline: none !important;
+   padding: 5px !important;
 }
 
 
 .show_process div {
    width: 100px;
-   height: 37px;
+   height: 35px;
    border-radius: 50px;
    background: #fff;
    color: #222;
@@ -1308,6 +1294,42 @@ footer a {
 .show_process .active {
    background: coral;
    color: #fff
+}
+
+span.link {
+   color: blue;
+   text-decoration: underline;
+   cursor: pointer;
+   font-weight: bold;
+}
+
+
+.spinner {
+   position: relative;
+   justify-content: center !important;
+   text-align: center;
+   margin-top: 10px
+}
+
+.spin {
+   display: inline-block !important;
+   border-radius: 50px;
+   width: 40px;
+   height: 40px;
+   border: 2px solid;
+   border-color: coral transparent coral transparent;
+   animation: loader .9s infinite ease-in-out;
+   transition: .4s ease-in-out;
+}
+
+@keyframes loader {
+   from {
+      transform: rotate(0deg)
+   }
+
+   to {
+      transform: rotate(360deg)
+   }
 }
 
 @media(max-width:1212px) {
@@ -1338,15 +1360,6 @@ footer a {
       height: auto !important
    }
 
-   .card-box {
-      display: block
-   }
-
-   ._card {
-      display: inline-block;
-      vertical-align: top
-   }
-
    .free_quote_area {
       position: relative;
       top: 50px;
@@ -1368,6 +1381,14 @@ footer a {
 
    .carol-notice h1 {
       font-size: 55px
+   }
+
+   .no-pad {
+      padding: 2rem 1rem !important;
+   }
+
+   .rev-col {
+      flex-direction: column-reverse;
    }
 
 }
